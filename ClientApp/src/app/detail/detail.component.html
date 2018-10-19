@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>{{currentUser.first_name}}</h1>
+  <p>{{currentUser.email}}</p>
+  <p>{{currentUser.id}}</p>
+</div>
+
+<form (submit)="UpdateUser(currentUser.id)">
+    <p>first Name : <input type="text" placeholder="first Name" [(ngModel)] = "update.first_name" name="update.first_name" value="update.first_name"></p>
+    <p>last Name : <input type="text" placeholder="last Name" [(ngModel)] = "update.last_name" name="update.last_name" value="update.last_name"></p>
+    <p>email : <input type="email" placeholder="email" [(ngModel)] = "update.email" name="update.email" value="update.email"></p>
+    <button type="submit" class="btn btn-warning">Update</button>
+</form>

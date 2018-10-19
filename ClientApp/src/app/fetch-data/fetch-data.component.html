@@ -1,0 +1,28 @@
+<h1>User Data</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!Users"><em>Loading...</em></p>
+
+<table class='table' *ngIf="Users">
+  <thead>
+    <tr>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of Users">
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button [routerLink]="['user',user.id]">Update</button>
+        <button (click)="DeleteUser(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
